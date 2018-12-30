@@ -21,7 +21,7 @@ msg2 db 'its odd$'  ; ODD MESSAGE
         mov dx,offset msg1
         mov ah, 9 ;DISPLAY STRING CODE
         int 21h
-        JMP JEVEN
+        JMP JEVEN ; TERMINATE THE PROGRAM
         
         ODD:    
         mov dx,offset msg2
