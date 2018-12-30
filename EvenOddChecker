@@ -1,15 +1,15 @@
 
-org 100h
+org 100h ; x86 
 
-.DATA 
-msg1 db 'its even$' 
-msg2 db 'its odd$'
+.DATA ;DATA SEGMENT
+msg1 db 'its even$' ;EVEN MESSAGE
+msg2 db 'its odd$'  ; ODD MESSAGE
 
-.CODE   
+.CODE  ;CODE SEGMENT
     MAIN PROC       
-        mov ah,1
-        int 21h
-        mov bx, 02h
+        mov ah,1 ;INPUT CODE
+        int 21h  ;DISPLAY
+        mov bx, 02h 
         div bx
         cmp dx, 0h
         JE EVEN   
@@ -19,7 +19,7 @@ msg2 db 'its odd$'
         
         EVEN:
         mov dx,offset msg1
-        mov ah, 9
+        mov ah, 9 ;DISPLAY STRING CODE
         int 21h
         JMP JEVEN
         
