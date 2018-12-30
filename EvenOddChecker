@@ -1,0 +1,38 @@
+
+org 100h
+
+.DATA 
+msg1 db 'its even$' 
+msg2 db 'its odd$'
+
+.CODE   
+    MAIN PROC       
+        mov ah,1
+        int 21h
+        mov bx, 02h
+        div bx
+        cmp dx, 0h
+        JE EVEN   
+        
+        cmp dx, 0h
+        JNE ODD
+        
+        EVEN:
+        mov dx,offset msg1
+        mov ah, 9
+        int 21h
+        JMP JEVEN
+        
+        ODD:    
+        mov dx,offset msg2
+        mov ah, 9
+        int 21h
+        
+        
+        JEVEN:
+      
+      
+      
+        MAIN ENDP
+    END MAIN
+        
