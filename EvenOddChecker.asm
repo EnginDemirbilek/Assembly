@@ -31,7 +31,7 @@ msg2 db 'its odd$'  ; ODD MESSAGE
         
         JEVEN:
       
-      
+        HLT ;TERMINATE THE PROGRAM
       
         MAIN ENDP
     END MAIN
